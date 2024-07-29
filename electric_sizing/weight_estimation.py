@@ -1,4 +1,4 @@
-from empty_weight_table import get_empty_weight_fraction_params
+from .empty_weight_table import get_empty_weight_fraction_params
 
 
 def get_gross_takeoff_weight(
@@ -43,6 +43,11 @@ def get_empty_weight_fraction(
     """
 
     regression_params = get_empty_weight_fraction_params(aircraft_type)
+
+    if isinstance(regression_params, str):
+        return (
+            regression_params  # Return the error message if aircraft type is not found
+        )
 
     return (
         regression_params["A-metric"]
