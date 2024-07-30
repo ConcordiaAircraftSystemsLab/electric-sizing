@@ -8,7 +8,7 @@ from electric_sizing.iterative_gross_takeoff_weight import (
 
 def main():
     bmf = get_battery_mass_fraction_cruise(
-        range=125,  # km, Pipistrel Velis Electro
+        aircraft_range=125,  # km, Pipistrel Velis Electro
         battery_specific_energy=170,  # The Electro's batteries are rated @ 12.4 kWh and weigh 70 kg each
         total_system_efficiency=0.88,  # This is a guess
         propeller_efficiency=0.85,  # This is a guess

@@ -68,7 +68,7 @@ def get_battery_mass_fraction_loiter(
 
 
 def get_battery_mass_fraction_cruise(
-    range: float,
+    aircraft_range: float,
     battery_specific_energy: float,
     total_system_efficiency: float,
     propeller_efficiency: float,
@@ -79,7 +79,7 @@ def get_battery_mass_fraction_cruise(
     Calculate the mass fraction of the battery during cruise phase in an electric aircraft.
 
     Args:
-        range (float): The range the aircraft can cover in km.
+        aircfraft_range (float): The range the aircraft can cover in km.
         battery_specific_energy (float): The specific energy of the battery in Wh/kg.
         total_system_efficiency (float): The total efficiency of the system.
         propeller_efficiency (float): The efficiency of the propeller.
@@ -92,7 +92,7 @@ def get_battery_mass_fraction_cruise(
     """
 
     return (
-        range
+        aircraft_range
         * gravitational_acceleration
         / (
             3.6

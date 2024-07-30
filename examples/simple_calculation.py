@@ -4,7 +4,7 @@ from electric_sizing.weight_estimation import get_gross_takeoff_weight
 
 def main():
     bmf = get_battery_mass_fraction_cruise(
-        range=100,
+        aircraft_range=100,
         battery_specific_energy=250,
         total_system_efficiency=0.88,
         propeller_efficiency=0.8,
