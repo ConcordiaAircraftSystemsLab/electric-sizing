@@ -19,4 +19,6 @@ AIRCRAFT_DATA = {
 
 
 def get_empty_weight_fraction_params(aircraft_type: str):
-    return AIRCRAFT_DATA.get(aircraft_type, "Aircraft type not found")
+    if aircraft_type not in AIRCRAFT_DATA:
+        raise KeyError(f"Aircraft type '{aircraft_type}' not found in AIRCRAFT_DATA")
+    return AIRCRAFT_DATA[aircraft_type]

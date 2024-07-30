@@ -26,10 +26,12 @@ def test_get_empty_weight_fraction():
     expected = params["A-metric"] * (10000 ** params["C"])
     assert result == pytest.approx(expected)
 
-    # Test with an unknown aircraft type
+
+def test_get_empty_weight_fraction_invalid_aircraft_type():
+    # Test with an unknown aircraft type to check error handling
     aircraft_type = "Unknown aircraft"
-    result = get_empty_weight_fraction(10000, aircraft_type, variable_sweep=False)
-    assert result == "Aircraft type not found"
+    with pytest.raises(KeyError):
+        get_empty_weight_fraction(10000, aircraft_type, variable_sweep=False)
 
 
 if __name__ == "__main__":
