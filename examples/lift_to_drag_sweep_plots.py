@@ -30,7 +30,7 @@ def main():
         payload_weight=payload_weight,
         aircraft_type=aircraft_type,
         guess_weight=guess_weight,
-        n_points=100,
+        n_points=20,
         color="blue",
         marker="o",
     )
